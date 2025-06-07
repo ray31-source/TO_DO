@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register User</title>
+  <title>Login User</title>
 </head>
 <body>
-  <button onclick="createUser()">Register User</button>
+  <button onclick="loginUser()">Login User</button>
 
   <script>
-    function createUser() {
+    function loginUser() {
       const data = {
-        name: 'testuser',
         email:"iamhasin9431@gmail.com",
-        password: 'testpass'
+        password: 'testpas'
       };
 
-      fetch('https://fantastic-trout-5gjgvp4q9rxhpp79-8000.app.github.dev/user/register', {
+      fetch('https://humble-space-carnival-g47vgq77rrvvcw4vq-8000.app.github.dev/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,5 +1,6 @@
 const express = require('express')
 const registerUser = require('../services/userService')
+const loginUser = require('../services/userService')
 
 const userRouter = express.Router()
 
@@ -9,6 +10,9 @@ userRouter.get('/register',(req,res)=>{
 
 userRouter.post('/register',
     registerUser
+)
+userRouter.post('/login' ,
+    loginUser
 )
 
 module.exports = userRouter;
