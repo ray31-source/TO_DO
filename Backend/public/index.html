@@ -1,19 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Register User</title>
 </head>
 <body>
-    <form action="/submit-form">
-<input placeholder="Enter Your Name" required>
-<input placeholder="Enter Your Email" required>
-<input placeholder="Enter Your Password" required minlength="6">
+  <button onclick="createUser()">Register User</button>
 
+  <script>
+    function createUser() {
+      const data = {
+        name: 'testuser',
+        email:"iamhasin9431@gmail.com",
+        password: 'testpass'
+      };
 
-
-    </form>
-    
+      fetch('https://fantastic-trout-5gjgvp4q9rxhpp79-8000.app.github.dev/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(result => {
+        console.log('Success:', result);
+        alert('User registered!');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Registration failed');
+      });
+    }
+  </script>
 </body>
 </html>

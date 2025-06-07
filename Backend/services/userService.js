@@ -1,9 +1,9 @@
 const User = require('../Models/usermodels')
 const bcrypt = require('bcrypt')
-async function registerUser(req,res,next){
+async function registerUser(req,res){
 const {name,email,password} = req.body
-if(!name || !email || !password){
-     console.log("Fields are Empty")
+if(! name || ! email || ! password){
+     console.log("Fields are Empty" , req.body)
     throw new Error("All fields are required")
    
     
@@ -22,7 +22,7 @@ else{
         console.log("Successfully Saved")
         res.status(200).send("Registered Successfully")
     })
-    next()
+    
 }
 catch (err){
     console.log("Failed to register",err)

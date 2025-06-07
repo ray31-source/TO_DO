@@ -5,8 +5,10 @@ const userRouter = require('./Routes/userRoute')
 app.use(express.json())
 app.use('/user',userRouter)
 
+
 app.get('/',(req,res)=>{
 res.send("Hello World")
 })
+app.use(express.static('public'))
 
 module.exports = app;
