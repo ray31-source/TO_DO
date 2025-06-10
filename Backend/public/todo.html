@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send TODO</title>
+</head>
+<body>
+  <h1>Sending TODO to Server</h1>
+  <button onclick="sendTodo()">Send Todo</button>
+
+  <script>
+    function sendTodo() {
+      const todo = {
+        tittle: "Buy groceries",
+        description: "Milk, eggs, bread",
+        body: "I need to buy groceries on my way home from work."
+      };
+
+      fetch('https://cuddly-space-enigma-g47vgq77r75x2w76w-8000.app.github.dev/user/:id/todo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(todo)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        alert("Todo sent!");
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert("Failed to send todo");
+      });
+    }
+  </script>
+</body>
+</html>

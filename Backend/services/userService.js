@@ -54,7 +54,7 @@ async function loginUser(req,res){
                 expiresIn:'1h'
             })
             console.log("Login Successful",token)
-            res.status(200).send('Successfully Logged In')
+            res.status(200).send(token)
 
             
         }
@@ -64,3 +64,4 @@ async function loginUser(req,res){
 
 module.exports = registerUser;
 module.exports = loginUser;
+
