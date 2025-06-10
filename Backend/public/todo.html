@@ -15,11 +15,13 @@
         description: "Milk, eggs, bread",
         body: "I need to buy groceries on my way home from work."
       };
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQzZDYwYjUyNmExNzBhODI4MzZlNjEiLCJpYXQiOjE3NDk1NzY0MjIsImV4cCI6MTc0OTU4MDAyMn0.fK71rB5An7VvpVJOstJl5pLfLjAo9SUt6C0OFS8C3bI'
 
-      fetch('https://cuddly-space-enigma-g47vgq77r75x2w76w-8000.app.github.dev/user/:id/todo', {
+      fetch('https://curly-space-disco-v6qjxvqqr7j9fxv55-8000.app.github.dev/user/id:1232/todo', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':`Bearer ${token}`
         },
         body: JSON.stringify(todo)
       })

@@ -54,7 +54,7 @@ async function loginUser(req,res){
                 expiresIn:'1h'
             })
             console.log("Login Successful",token)
-            res.status(200).send(token)
+            res.status(200).json({token})
 
             
         }
